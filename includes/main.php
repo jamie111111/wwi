@@ -1,4 +1,7 @@
 <?php
+// Importeer de configuratie in het bestand.
+include_once('config.php');
+
 /*
  * Verzameling van alle includes.
  *

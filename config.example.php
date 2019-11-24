@@ -9,6 +9,9 @@ ini_set('sendmail_path', "\"C:\xampp\sendmail\sendmail.exe\" -t");
 //error_reporting(E_ALL);
 
 $config = array(
+    "mollie" => array(
+        "key" => "test_gTT7NU33MBzu5pCgV9qfa472FjuBaA",
+    ),
     "db" => array(
         "user" => "root",
         "password" => "",

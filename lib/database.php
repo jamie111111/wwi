@@ -1,7 +1,4 @@
 <?php
-// Importeer de configuratie in het bestand.
-include_once('config.php');
-
 // Maak een connectie string aan voor het verbinden met de database.
 $dsn = $config['db']['driver'] . ':host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
 
