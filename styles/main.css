@@ -1,5 +1,8 @@
 @import 'typography.css';
 @import 'keyframes.css';
+@import 'homepage.css';
+@import 'search.css';
+@import 'notfound.css';
 
 * {
     -webkit-font-smoothing: antialiased;
@@ -7,14 +10,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
+    text-shadow: 2px 4px 3px rgba(33, 33, 33, 0.1);
     font-size: 14px;
 }
 
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: #f1f1f1;
+    background: #ffffff;
 }
 
 img {
@@ -22,12 +25,22 @@ img {
     height: auto;
 }
 
+/* min-height instellen op basis van header en footer */
 .page-content {
-    padding: 40px;
+    min-height: 100vh;
 }
 
-.header-spacing {
-    height: 120px;
+.page-content.showingHeader {
+    min-height: calc(100vh - 120px);
+}
+
+.page-content.showingFooter {
+    min-height: calc(100vh - 40px);
+}
+
+.page-content.showingHeader.showingFooter {
+    min-height: calc(100vh - 160px);
+    padding: 40px;
 }
 
 .content-container {
@@ -37,30 +50,64 @@ img {
 }
 
 a {
-    color: #000000;
+    color: #8e8e8e;
     text-decoration: underline;
+    text-shadow: none;
+}
+
+a.go-to-top {
+    text-align: center;
+    width: 100%;
+    display: block;
 }
 
 a:hover {
-    color: #00bcf2;
+    color: #6bb9f0;
     text-decoration: underline;
+    transition: all .15s ease-in-out;
 }
 
 footer {
+    position: relative;
     width: 100%;
-    padding: 40px;
+    padding: 0 40px;
     background-color: #005f93;
-    height: 250px;
+    height: 40px;
+    max-height: 40px;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
+footer .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+footer .content-container a {
+    padding: 5px 15px 5px 15px;
+    border-right: 1px solid white;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer .content-container a:hover {
+    text-decoration: underline;
+}
+
+footer .content-container a:last-of-type {
+    border-right: none;
+}
+
 .header {
-    position: fixed;
+    position: relative;
     z-index: 10;
     left: 0;
     right: 0;
     top: 0;
     width: 100%;
+    max-height: 120px;
+    height: 120px;
 }
 
 .header img {
@@ -77,6 +124,7 @@ footer {
     background-color: #ffffff;
     position: relative;
     z-index: 1;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 .header-top .cart img {
@@ -105,11 +153,40 @@ footer {
     padding: 10px;
 }
 
-.header-bottom {
-    background-color: #0083ca;
+.header-top ul li.search {
     width: 100%;
+}
+
+.header-top ul li.search form {
+    width: 100%;
+}
+
+.header-top ul li.search form .input-search-container {
+    width: 100%;
+    position: relative;
+}
+
+.header-top ul li.search form .input-search-container input.input-search {
+    width: 100%;
+    padding-right: 65px;
+}
+
+.header-top ul li.search form .input-search-container button {
+    position: absolute;
+    right: 0;
+}
+
+.header-bottom {
+    background-color: #005f93;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
     padding: 0 40px;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    z-index: 1;
+    position: relative;
 }
 
 .header-bottom .content-container {
@@ -152,25 +229,20 @@ footer {
     padding: 5px 10px 5px 15px;
 }
 
-.footer-spacing {
-    height: 250px;
-}
-
 .btn-primary {
-    background: #0083ca;
+    background: #005f93;
     border: 0;
     color: #fff;
     padding: 10px 40px;
     border-radius: 5px;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     cursor: pointer;
     font-weight: normal;
     transition: all 0.15s ease-in-out;
 }
 
 .btn-primary:hover, .input-search-container .input-submit:hover {
-    background: #00bcf2;
-    border-color: #00bcf2;
+    background: #6bb9f0;
+    border-color: #6bb9f0;
 }
 
 .btn-secondary {
@@ -189,15 +261,29 @@ footer {
     transition: all 0.15s ease-in-out;
 }
 
+.input-search-container .input-submit .fa.fa-search {
+    color: #fff;
+    padding: 0 10px;
+}
+
 .input-search-container .input-submit {
     padding: 9px;
-    border: 1px solid #0083ca;
+    border: 1px solid #005f93;
     color: white;
-    background-color: #0083ca;
+    background-color: #005f93;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     position: relative;
     right: 14px;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
+}
+
+.box-shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.box-shadow:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }

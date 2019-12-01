@@ -8,11 +8,11 @@ $headerTop = '
                         <img src="/assets/images/logo.png" alt="logo" />
                     </a>
                 </li>
-                <li>
-                    <form action="/search" method="POST">
+                <li class="search">
+                    <form action="/search" method="GET">
                         <div class="input-search-container">
-                            <input class="input-search" type="search" placeholder="Zoek artikel..." />
-                            <button class="input-submit" type="submit">Zoek</button>
+                            <input class="input-search" type="search" placeholder="Zoek artikel..." name="query" />
+                            <button class="input-submit" type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
                 </li>

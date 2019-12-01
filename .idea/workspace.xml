@@ -2,12 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a9bdab5-84fd-456d-956e-2c9be3b62cec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/calculations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/formatting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/getQueryParamSafely.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/querying.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/randomImage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/templating.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/homepage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/notfound.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/search.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd5340fb-c0e2-474b-9a1e-2c7ec6f34a25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd5340fb-c0e2-474b-9a1e-2c7ec6f34a25.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.example.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.example.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/shopping-cart.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/shopping-cart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.example.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/mollie.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/mollie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/typography.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/typography.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/elements/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/elements/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/elements/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/elements/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/homepage.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +80,8 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mysql &amp; webprogrammeren/challenge-5" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -110,7 +132,8 @@
       <workItem from="1574161690447" duration="7513000" />
       <workItem from="1574504857040" duration="7247000" />
       <workItem from="1574603099494" duration="424000" />
-      <workItem from="1574603677054" duration="424000" />
+      <workItem from="1574603677054" duration="1329000" />
+      <workItem from="1574776042227" duration="43886000" />
     </task>
     <servers />
   </component>
@@ -122,7 +145,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

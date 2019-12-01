@@ -16,6 +16,15 @@ p {
 }
 
 span {
+    font-style: italic;
+    color: #8e8e8e;
+}
+
+span.colored {
+    color: #6bb9f0;
+}
+
+span {
     font-size: 12px;
     font-weight: normal;
 }

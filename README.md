@@ -2,7 +2,7 @@
 Dit project is een school opdracht vanuit Windesheim voor de opleiding HBO-ICT. Het project is een webshop voor het bedrijf Wide World Importers. Het bevat geen back-end en is enkel gericht op de front-end van de webshop.
 
 ##Configuratie
-Maak het bestand `config.php` aan in de `root` directory van het project en plak hier de config in uit het bestand `config.example.php`. Vervang vervolgens de standaard waardes met de gewenste configuratie. Let er op dat dit bestand niet in git mag komen te staan. Vandaar dat deze is toegevoegd in de `.gitignore`.
+In het bestand `config.php` staat de configuratie van de webshop. Wanneer jou configuratie afwijkt van de standaard ingevulde, pas dan de waardes in dit document aan naar behoren.
 
 ##Mappen structuur
 ##index.php
