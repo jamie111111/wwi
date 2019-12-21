@@ -26,10 +26,8 @@ function GetLoginData($connection)
         );
     }
 }
-
 /**Een functie om te checken of een ingevoerde email al bestaat in de database
  */
-
 function RunEmailCheck($email)
 {
     //Query email uitvoeren
@@ -38,13 +36,11 @@ function RunEmailCheck($email)
     $count = sizeof($result);
     //Email in gebruik als er meer dan 0 records worden gevonden
     if ($count > 0) {
-
         return true;
     } else {
         return false;
     }
 }
-
 function AddCustomerToDatabase($values = array())
 {
     return query("
@@ -52,7 +48,6 @@ function AddCustomerToDatabase($values = array())
         VALUES ('" . $values['voornaam'] . "','" . $values['tussenvoegsel'] . "', '" . $values['achternaam'] . "', '" . $values['email'] . "', '" . $values['wachtwoord'] . "', '" . $values['gender'] . "', '" . $values['geboortedatum'] . "', '" . $values['telnr'] . "', '" . $values['woonplaats'] . "', '" . $values['adres'] . "', '" . $values['huisnr'] . "', '" . $values['postcode'] . "')
     ");
 }
-
 function UserExistCheck($email)
 {
     //Query email uitvoeren
@@ -70,4 +65,23 @@ function UserExistCheck($email)
 function getEmailsFromDatabase($email)
 {
     return query('SELECT * FROM webshop_customers WHERE email = ?', array('s', $email));
+}
+
+/**Stuurt een bevestigingsmail met link */
+
+function AccountVerification($email, $voornaam)
+{
+    $naar = $email;
+    $onderwerp = 'Account bevestigen (Wide World Importers)';
+    $message_body = '
+    Hallo ' . $voornaam . ',
+    
+    Hartelijk dank voor je inschrijving en welkom bij Wide World Importers!!
+    
+    Klik op de link om je account te activeren:
+
+    http://localhost/login-system/verify.php?email=' . $email . ';
+    ';
+
+    mail($naar, $onderwerp, $message_body);
 }

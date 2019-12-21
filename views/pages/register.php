@@ -13,6 +13,7 @@ if (isset($_POST['register-user'])) {
         AddCustomerToDatabase($userData);
         // var_dump(mysqli_error($connection));
         // exit();
+        AccountVerification($userData['email'], $userData['voornaam']);
         $_SESSION['ingelogd'] = true;
         $_SESSION['message'] = "U bent succesvol geregistreerd en ingelogd, u kunt verder met winkelen of bestellen door op een van de keuze te klikken";
         header('Location: /success');
