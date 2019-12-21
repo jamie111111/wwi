@@ -3,8 +3,16 @@
 function getFormData($connection)
 {
     return array(
+        'gender' => mysqli_escape_string($connection, $_POST['gender']),
         'voornaam' => mysqli_real_escape_string($connection, $_POST['voornaam']),
+        'tussenvoegsel' => mysqli_real_escape_string($connection, $_POST['tussenvoegsel']),
         'achternaam' => mysqli_real_escape_string($connection, $_POST['achternaam']),
+        'postcode' => mysqli_real_escape_string($connection, $_POST['postcode']),
+        'huisnr' => mysqli_real_escape_string($connection, $_POST['huisnr']),
+        'adres' => mysqli_real_escape_string($connection, $_POST['adres']),
+        'woonplaats' => mysqli_real_escape_string($connection, $_POST['woonplaats']),
+        'geboortedatum' => mysqli_real_escape_string($connection, $_POST['geboortedatum']),
+        'telnr' => mysqli_real_escape_string($connection, $_POST['telnr']),
         'email' => mysqli_real_escape_string($connection, $_POST['email']),
         'wachtwoord' => mysqli_real_escape_string($connection, $_POST['wachtwoord']),
     );
@@ -40,8 +48,8 @@ function RunEmailCheck($email)
 function AddCustomerToDatabase($values = array())
 {
     return query("
-        INSERT INTO webshop_customers (FirstName, LastName, Email, Password, Gender, DateOfBirth, PhoneNumber, City, Address, HouseNr, PostalCode)
-        VALUES ('" . $values['voornaam'] . "', '" . $values['achternaam'] . "', '" . $values['email'] . "', '" . $values['wachtwoord'] . "', 'Man', '2019-12-19 21:15:05', '123', 'af', 'sdf', '5', 'lkj')
+        INSERT INTO webshop_customers (FirstName,LastNamePreposition,LastName,Email, Password, Gender, DateOfBirth, PhoneNumber, City, Address, HouseNr, PostalCode)
+        VALUES ('" . $values['voornaam'] . "','" . $values['tussenvoegsel'] . "', '" . $values['achternaam'] . "', '" . $values['email'] . "', '" . $values['wachtwoord'] . "', '" . $values['gender'] . "', '" . $values['geboortedatum'] . "', '" . $values['telnr'] . "', '" . $values['woonplaats'] . "', '" . $values['adres'] . "', '" . $values['huisnr'] . "', '" . $values['postcode'] . "')
     ");
 }
 
