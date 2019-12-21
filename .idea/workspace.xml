@@ -2,28 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a9bdab5-84fd-456d-956e-2c9be3b62cec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/calculations.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/formatting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/getQueryParamSafely.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/querying.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/randomImage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/templating.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/homepage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/notfound.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/search.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pages/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd5340fb-c0e2-474b-9a1e-2c7ec6f34a25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd5340fb-c0e2-474b-9a1e-2c7ec6f34a25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/connection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/clothing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/computing-novelties.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/mugs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/novelty-items.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/t-shirts.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/pages/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd5340fb-c0e2-474b-9a1e-2c7ec6f34a25.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/shopping-cart.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/shopping-cart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.example.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/calculations.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/calculations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/formatting.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/formatting.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/querying.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/querying.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/sendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/sendMail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/templating.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/templating.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/typography.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/typography.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/elements/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/elements/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/elements/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/elements/header.php" afterDir="false" />
@@ -55,18 +61,12 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="wwi" type="feb32156:DbDataSourceImpl" />
+        <item name="wideworldimporters@127.0.0.1" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="wwi" type="feb32156:DbDataSourceImpl" />
+        <item name="wideworldimporters@127.0.0.1" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="wwi" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="wideworldimporters: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -80,11 +80,12 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mysql &amp; webprogrammeren/challenge-5" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Projects/php-apache-mysql-containerized" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jesse\Windesheim\wwi_webshop\uploads" />
       <recent name="C:\Users\jesse\Windesheim\wwi_webshop\functions" />
       <recent name="C:\Users\jesse\Windesheim\wwi_webshop\views" />
       <recent name="C:\Users\jesse\Windesheim\wwi_webshop\lib" />
@@ -110,7 +111,12 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c4219a80" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -133,7 +139,14 @@
       <workItem from="1574504857040" duration="7247000" />
       <workItem from="1574603099494" duration="424000" />
       <workItem from="1574603677054" duration="1329000" />
-      <workItem from="1574776042227" duration="43886000" />
+      <workItem from="1574776042227" duration="44512000" />
+      <workItem from="1575364365429" duration="215000" />
+      <workItem from="1575364597684" duration="703000" />
+      <workItem from="1575366543517" duration="4041000" />
+      <workItem from="1575632033233" duration="15553000" />
+      <workItem from="1575717281278" duration="21103000" />
+      <workItem from="1576236999047" duration="2141000" />
+      <workItem from="1576411988299" duration="11463000" />
     </task>
     <servers />
   </component>

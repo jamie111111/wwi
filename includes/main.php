@@ -9,4 +9,3 @@ include_once('./config.php');
  * eerste ingeladen moeten worden boven in de index.php.
  * */
 include_once('./functions/main.php');
-include_once('./lib/database.php');

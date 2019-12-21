@@ -3,6 +3,14 @@
 @import 'homepage.css';
 @import 'search.css';
 @import 'notfound.css';
+@import 'cart.css';
+@import 'klantenservice.css';
+@import 'vraag.css';
+@import 'vragen.css';
+@import 'product.css';
+@import 'base-styles.css';
+@import 'register.css';
+@import 'login.css';
 
 * {
     -webkit-font-smoothing: antialiased;
@@ -10,19 +18,26 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    text-shadow: 2px 4px 3px rgba(33, 33, 33, 0.1);
+    /*text-shadow: 2px 4px 3px rgba(33, 33, 33, 0.1);*/
     font-size: 14px;
 }
 
 body {
     width: 100%;
     min-height: 100vh;
-    background: #ffffff;
+    overflow-x: hidden;
 }
 
 img {
     width: 100%;
     height: auto;
+}
+
+hr {
+    background-color: rgba(100, 100, 100, 0.1);
+    border-color: rgba(100, 100, 100, 0.1);
+    border-width: 1px;
+    margin: 20px;
 }
 
 /* min-height instellen op basis van header en footer */
@@ -47,10 +62,11 @@ img {
     max-width: 1024px;
     margin: 0 auto;
     display: block;
+    position: relative;
 }
 
 a {
-    color: #8e8e8e;
+    color: rgba(0, 0, 0, 0.4);
     text-decoration: underline;
     text-shadow: none;
 }
@@ -64,7 +80,7 @@ a.go-to-top {
 a:hover {
     color: #6bb9f0;
     text-decoration: underline;
-    transition: all .15s ease-in-out;
+    transition: all .15s linear;
 }
 
 footer {
@@ -100,7 +116,7 @@ footer .content-container a:last-of-type {
 }
 
 .header {
-    position: relative;
+    position: fixed;
     z-index: 10;
     left: 0;
     right: 0;
@@ -125,6 +141,28 @@ footer .content-container a:last-of-type {
     position: relative;
     z-index: 1;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.header-top .cart {
+    position: relative;
+}
+
+.header-top .cart span {
+    background: #6bb9f0;
+    display: flex;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-style: normal;
+    text-decoration: none;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header-top .cart img {
@@ -174,6 +212,7 @@ footer .content-container a:last-of-type {
 .header-top ul li.search form .input-search-container button {
     position: absolute;
     right: 0;
+    top: 0;
 }
 
 .header-bottom {
@@ -229,20 +268,36 @@ footer .content-container a:last-of-type {
     padding: 5px 10px 5px 15px;
 }
 
+form.login-button-form button {
+    width: 115px;
+    padding: 10px 20px;
+}
+
 .btn-primary {
-    background: #005f93;
+    background: #6bb9f0;
+    border-color: #6bb9f0;
     border: 0;
     color: #fff;
     padding: 10px 40px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: normal;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.15s linear;
+}
+
+.btn-primary span {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.btn-primary span.fa {
+    margin-right: 10px;
 }
 
 .btn-primary:hover, .input-search-container .input-submit:hover {
-    background: #6bb9f0;
-    border-color: #6bb9f0;
+    background: #005f93;
 }
 
 .btn-secondary {
@@ -258,7 +313,7 @@ footer .content-container a:last-of-type {
     padding: 9px 24px 9px 14px;
     border-radius: 5px;
     min-width: 400px;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.15s linear;
 }
 
 .input-search-container .input-submit .fa.fa-search {
@@ -268,15 +323,15 @@ footer .content-container a:last-of-type {
 
 .input-search-container .input-submit {
     padding: 9px;
-    border: 1px solid #005f93;
+    border: 1px solid #6bb9f0;
     color: white;
-    background-color: #005f93;
+    background-color: #6bb9f0;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     position: relative;
     right: 14px;
     cursor: pointer;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.15s linear;
 }
 
 .box-shadow {
@@ -286,4 +341,133 @@ footer .content-container a:last-of-type {
 
 .box-shadow:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.go-back span, .go-to-top span {
+    display: inline-block;
+    transition: all .15s linear;
+    text-decoration: underline;
+}
+
+.go-to-top span i {
+    color: rgba(0, 0, 0, 0.4);
+    margin-left: 5px;
+}
+
+.go-back span i {
+    margin-right: 5px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.go-back:hover span {
+    color: #6bb9f0;
+    transform: translateX(-5px);
+    text-decoration: none;
+}
+.go-back:hover span i, .go-to-top:hover span i {
+    color: #6bb9f0;
+}
+.go-to-top:hover span {
+    color: #6bb9f0;
+    transform: translateY(-5px);
+    text-decoration: none;
+}
+
+.icon-button, .icon-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 18px;
+    opacity: 0.5;
+    transition: all .15s linear;
+    width: 40px;
+    height: 40px;
+}
+
+.icon-button:hover {
+    opacity: 1;
+}
+
+select {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+span.add-to-cart.added button.added-product-button {
+    position: relative;
+    background-color: #3fc380;
+    z-index: 1;
+    transition: initial;
+}
+
+span.add-to-cart.added:hover button.added-product-button {
+    visibility: hidden;
+}
+
+span.add-to-cart.added div {
+    position: relative;
+    width: 100% !important;
+}
+
+span.add-to-cart.added div button.remove-product-button {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #f03434;
+    z-index: 0;
+}
+
+span.add-to-cart button {
+    background: transparent;
+    background-color: #6bb9f0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .15s linear;
+}
+
+span.add-to-cart button:hover {
+    background-color: #005f93;
+}
+
+span.add-to-cart button span {
+    color: white;
+    font-style: normal;
+}
+
+span.add-to-cart button span:first-of-type {
+    margin-right: 10px;
+}
+
+.availability {
+    color: #3fc380;
+    font-style: normal;
+    font-size: 16px;
+    text-transform: lowercase;
+    white-space: nowrap;
+}
+
+.tags-container {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tags-container .tag {
+    padding: 5px 10px;
+    background: #005f93;
+    margin-right: 5px;
+    color: #ffffff;
+    font-style: normal;
 }

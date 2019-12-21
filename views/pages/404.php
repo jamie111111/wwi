@@ -4,9 +4,11 @@ $view = array(
     'head' => '',
     'body' => '
         <div class="notfound content-container">
-            <h1>404 - Oeps! Het lijkt erop dat je verdwaald bent.</h1>
-            <a href="/homepage  ">Ik wil naar huis!</a>
+            <a class="go-back" href="/homepage"><span><i class="fa fa-arrow-left"></i></span>Ga terug naar de homepagina</a>
+            <br><br>
+            <h1>404 - Oeps! Helaas hebben wij de opgevraagde pagina niet kunnen vinden...</h1>
             <br>
+            <img src="../../assets/images/404.jpg" alt="404 afbeelding" />
         </div>
     ',
     'showHeader' => true,

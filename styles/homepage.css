@@ -5,10 +5,13 @@
 
 .homepage .product-group {
     flex: 1 0 29%;
-    margin: 20px;
+    margin: 10px;
     cursor: pointer;
     text-decoration: none !important;
     border-radius: 10px;
+    position: relative;
+    height: 300px;
+    margin-bottom: 30px;
 }
 
 .homepage .text-container {
@@ -17,31 +20,32 @@
 
 .homepage .product-group img {
     border-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
 }
 
 .homepage .product-group .product-group-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #005f93;
-    padding: 5px 15px;
-    margin-top: -4px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all .15s linear;
+    background: #6bb9f0;
+    position: relative;
+    top: -24px;
 }
 
 .homepage .product-group .product-group-bottom p {
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
 }
 
 .homepage .product-group .product-group-bottom span {
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    transition: all .15s ease-in-out;
+    transition: all .15s linear;
+    font-size: 14px;
 }
 
 .homepage .product-group .product-group-bottom span i {
@@ -53,6 +57,23 @@
     object-fit: cover;
 }
 
+.homepage .product-group:hover::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
+.homepage .product-group::before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent 30%, transparent 60%, rgba(0, 0, 0, 0.3));
+    border-radius: 10px;
+}
+
 .homepage .product-group:hover .product-group-bottom span {
     transform: translateX(5px);
+}
+
+.homepage .product-group:hover .product-group-bottom {
+    background: #005f93;
 }

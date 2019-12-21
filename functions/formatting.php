@@ -5,9 +5,10 @@
  * @return string\
  */
 function formatPrice($price) {
-    $formatted = str_replace('.', ',', $price);
-    if (!strpos($formatted, ',')) {
-        $formatted .= ',-';
+    $price = number_format($price, 2);
+    $price = str_replace('.', ',', $price);
+    if ($price <= 0) {
+        return 'gratis';
     }
-    return '&euro;' . $formatted;
+    return '&euro;' . $price . '<span>&nbsp;&nbsp;&nbsp;(inc. BTW)</span>';
 }

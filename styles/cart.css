@@ -1,0 +1,86 @@
+.shopping-cart .header-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart .order-total-container {
+    display: block;
+    padding: 20px;
+    background-color: rgba(100, 100, 100, 0.1);
+    border-radius: 5px;
+}
+
+.shopping-cart .order-total-container .order-total-container-row {
+    display: flex;
+    margin: 5px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-cart .order-total-container .order-total-container-row:last-of-type div {
+    font-weight: bold;
+}
+
+.shopping-cart .order-total-container div {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.shopping-cart .products-container .product-container:nth-of-type(1) {
+    margin-top: 0 !important;
+}
+
+.shopping-cart .products-container .product-container {
+    display: flex;
+    margin: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+.shopping-cart .products-container .product-container:last-of-type {
+    margin-bottom: 0;
+    border: none;
+}
+
+.shopping-cart .products-container .product-container p {
+    /*color: #6bb9f0;*/
+}
+
+.shopping-cart .products-container .product-container img {
+    height: auto;
+    width: 100px;
+}
+
+.shopping-cart .products-container .product-container .product-container-inner-block {
+    padding: 20px;
+}
+
+.shopping-cart .products-container .product-container .product-container-inner-block form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shopping-cart .products-container .product-container .product-container-inner-block form select {
+    margin-right: 15px;
+    /*padding: 5px 0;*/
+    width: 40px;
+}
+
+.shopping-cart .products-container .product-container .product-container-inner-block:nth-of-type(1) {
+    width: 140px;
+}
+
+.shopping-cart .products-container .product-container .product-container-inner-block:nth-of-type(2) {
+    width: calc(100%);
+}
+
+.shopping-cart .products-container .product-container .product-container-inner-block .price-container {
+    /*font-size: 16px;*/
+    width: 100px;
+    text-align: right;
+}
+
+.order-checkout-button-form button {
+    float: right;
+}

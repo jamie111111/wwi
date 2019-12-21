@@ -9,3 +9,26 @@ function addTaxToPrice($price, $taxRate) {
     $tax = ($taxRate / 100) * $price;
     return round($price += $tax, 2);
 }
+
+/**
+ * Functie om de producten totaalprijs te berekenen.
+ * @param $products
+ * @return float|int
+ */
+function calculateProductsTotalPrice($products) {
+    $totalPrice = 0;
+    foreach ($products as $product) {
+        $totalPrice += (addTaxToPrice($product['RecommendedRetailPrice'], $product['TaxRate']) * $_SESSION['cart'][$product['StockItemID']]['amount']);
+    }
+    return $totalPrice;
+}
+
+/**
+ * Functie om de verzendkosten te berekenen.
+ */
+function calculateShippingCosts($products) {
+    if (calculateProductsTotalPrice($products) >= 100) {
+        return 0;
+    }
+    return 6.95;
+}

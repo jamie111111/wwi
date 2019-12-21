@@ -1,0 +1,30 @@
+.base-btn-primary--login {
+    width: 100% !important;
+    margin-top: 44px;
+    border: 1px solid #6bb9f0
+}
+
+.login {
+    padding: 2em
+}
+
+.login__no-account {
+    margin-top: 30px
+}
+
+.login__no-account span {
+    font-size: 1rem;
+    margin-right: 5px
+}
+
+.login__no-account a {
+    font-weight: 700
+}
+
+.base-label--login {
+    padding: .7em 0
+}
+
+.login__no-account {
+    text-align: center;
+}

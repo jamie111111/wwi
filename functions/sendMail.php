@@ -4,11 +4,12 @@
  * Functie om mails te versturen.
  * @param string $to ontvanger
  * @param string $subject onderwerp
- * @param array[] $headers headers
  * @param string $message bericht
+ * @param array[] $headers headers
+ * @param string $params parameters
  * @return bool
  */
-function sendMail($to, $subject, $headers, $message) {
+function sendMail($to, $subject, $message, $headers = array(), $params = '') {
     $formattedHeaders = '';
     foreach($headers as $headerKey => $headerValue) {
         $formattedHeaders .= $headerKey  . ": " . $headerValue . "\r\n";
@@ -16,8 +17,9 @@ function sendMail($to, $subject, $headers, $message) {
     return mail(
         $to,
         $subject,
+        $message,
         $formattedHeaders,
-        $message
+        $params
     );
 }
 
@@ -27,4 +29,4 @@ function sendMail($to, $subject, $headers, $message) {
 //    "Mime-Version" => "1.0",
 //    "Content-Type" => "text/html; charset=UTF-8",
 //);
-//sendMail('jesse.spenkelink@gmail.com', 'test mail', $headers, '<p>Een test mail.</p>');
+//var_dump(sendMail('jesse.spenkelink@gmail.com', 'test mail', '<p>Een test mail.</p>', $headers, '-fjesse.spenkelink@gmail.com'));

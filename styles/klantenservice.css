@@ -1,0 +1,29 @@
+.klantenservice {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.klantenservice {
+    flex: 1 0 21%;
+    margin: 20px;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.klantenservice h5 {
+    text-align: center;
+}
+
+.klantenservice img {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    height: 300px;
+    object-fit: cover;
+}
+
+.klantenservice:hover img {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2), 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.klantenservice:hover h5 {
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.1), 2px 4px 3px rgba(0,0,0,0.1);
+}

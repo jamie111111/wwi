@@ -1,4 +1,18 @@
 <?php
+$productsInCart = countProductsInCart();
+$cartBadge = '';
+if ($productsInCart > 0) {
+    $cartBadge = "<span>" . $productsInCart . "</span>";
+}
+$loginButtonName = '';
+$loginData = GetLoginData($connection);
+$emailBtn = $_SESSION['login'];
+// unset($_SESSION['login']);
+if ($_SESSION['login']) {
+    $loginButtonName = 'Ingelogd';
+} else {
+    $loginButtonName = 'Inloggen';
+}
 $headerTop = '
     <div class="header-top">
         <div class="content-container">
@@ -17,13 +31,14 @@ $headerTop = '
                     </form>
                 </li>
                 <li>
-                    <form action="/login" method="POST">
-                        <button class="btn-primary" type="submit">Inloggen</button>
+                    <form class="login-button-form" action="/login" method="POST">
+                        <button class="btn-primary" type="submit"><span class="fa fa-user"></span><span> ' . $loginButtonName . '</span></button>
                     </form>
                 </li>
                 <li>
                     <a class="cart" href="/cart">
                         <img src="/assets/images/shopping-cart.png" alt="shopping-cart" />
+                        ' . $cartBadge . '
                     </a>
                 </li>
             </ul>
@@ -39,9 +54,6 @@ $headerBottom = '
                         <a href="/homepage">Homepagina</a>
                     </li>
                     <li>
-                        <a href="/categories">Categorieën</a>
-                    </li>
-                    <li>
                         <a href="/about">Over ons</a>
                     </li>
                 </ul>
@@ -52,7 +64,7 @@ $headerBottom = '
                         <a href="/orderstatus">Bestelstatus</a>
                     </li>
                     <li>
-                        <a href="/support">Klantenservice</a>
+                        <a href="/klantenservice">Klantenservice</a>
                     </li>
                 </ul>
             </div>

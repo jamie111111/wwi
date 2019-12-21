@@ -1,4 +1,7 @@
 <?php
+include_once('./includes/defines.php');
+session_start();
+
 /**
  * Inladen van alle belangrijk een benodigde includes.
  * Hier wordt alles ingeladen wat in de global scope benaderbaar moet zijn.
@@ -7,11 +10,31 @@
 include_once('./includes/main.php');
 
 /**
- * Inladen van de header en footer. Door deze in te laden zijn de variabelen $header en $footer beschikbaar.
- * Door deze variabelen te printen zullen ze getoond worden.
+ * Controleer of de post value quickAddToCart aanwezig is.
+ * Wanneer dit het geval is, voeg dan het product toe aan de cart.
  */
-include_once('./views/elements/header.php');
-include_once('./views/elements/footer.php');
+if (isSet($_POST['addToCart'])) {
+    $quantity = 1;
+    if (isSet($_POST['quantity'])) {
+        $quantity = $_POST['quantity'];
+    }
+    addProductToCart($_POST['addToCart'], $quantity);
+}
+
+/**
+ * Controleer of de post value removeFromCart aanwezig is en het bijhorende product zich in de cart bevindt.
+ * Zo ja, verwijder dan het product uit de cart.
+ */
+if (isSet($_POST['removeFromCart']) && isProductInCart($_POST['removeFromCart'])) {
+    removeProductFromCart($_POST['removeFromCart']);
+}
+
+/**
+ * Open een database connectie als die nog niet bestaat.
+ */
+if (!isSet($connection)) {
+    $connection = OpenDBConnection();
+}
 
 /**
  * Hier wordt gekeken op basis van de request url welk template / pagina moet worden ingeladen.
@@ -47,16 +70,34 @@ if (file_exists('views/pages' . $viewToInclude . '.php')) {
     <body>
         <?php
             if ($view['showHeader']) {
-                echo $header;
+                echo "<div style='height: 120px; width: 100%; display: block;'></div>";
             }
         ?>
         <div class="page-content <?php echo ($view['showHeader'] ? 'showingHeader' : ''); ?> <?php echo($view['showFooter'] ? 'showingFooter' : ''); ?>">
             <?php echo $view['body']; ?>
         </div>
         <?php
+            if ($view['showHeader']) {
+                include_once('./views/elements/header.php');
+                echo $header;
+            }
+        ?>
+        <?php
         if ($view['showFooter']) {
+            include_once('./views/elements/footer.php');
             echo $footer;
         }
         ?>
     </body>
 </html>
+
+<?php
+    /**
+     * Wanneer een database connectie nog open staat, sluiten we deze.
+     */
+    if (isSet($connection)) {
+        CloseDBConnection($connection);
+    }
+
+    $_SESSION['lastVisitedURI'] = $_SERVER['REQUEST_URI'];
+?>

@@ -1,7 +1,7 @@
 * {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    color: #555555;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,12 +12,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
     font-size: 14px;
     font-weight: normal;
-    color: #696969;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 span {
     font-style: italic;
-    color: #8e8e8e;
+    color: rgba(0, 0, 0, 0.4);
 }
 
 span.colored {
