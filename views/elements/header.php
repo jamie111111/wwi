@@ -4,15 +4,15 @@ $cartBadge = '';
 if ($productsInCart > 0) {
     $cartBadge = "<span>" . $productsInCart . "</span>";
 }
-$loginButtonName = '';
-$loginData = GetLoginData($connection);
-$emailBtn = $_SESSION['login'];
-// unset($_SESSION['login']);
-if ($_SESSION['login']) {
-    $loginButtonName = 'Ingelogd';
-} else {
-    $loginButtonName = 'Inloggen';
-}
+// $loginButtonName = '';
+// $loginData = GetLoginData($connection);
+// $emailBtn = $_SESSION['login'];
+// // unset($_SESSION['login']);
+// if ($_SESSION['login']) {
+//     $loginButtonName = 'Ingelogd';
+// } else {
+//     $loginButtonName = 'Inloggen';
+// }
 $headerTop = '
     <div class="header-top">
         <div class="content-container">
@@ -32,7 +32,7 @@ $headerTop = '
                 </li>
                 <li>
                     <form class="login-button-form" action="/login" method="POST">
-                        <button class="btn-primary" type="submit"><span class="fa fa-user"></span><span> ' . $loginButtonName . '</span></button>
+                        <button class="btn-primary" type="submit"><span class="fa fa-user"></span><span>inloggen </span></button>
                     </form>
                 </li>
                 <li>
