@@ -3,8 +3,6 @@
 $message = '';
 if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
     $message = '<p>' . $_SESSION['message'] . '</p>';
-} else {
-    header("location: index.php");
 }
 
 $body = '

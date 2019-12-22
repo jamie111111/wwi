@@ -9,16 +9,15 @@ function GetLoginData($connection)
     }
 }
 
-function RunEmailCheck($email)
+function UserExistCheck($email)
 {
     //Query email uitvoeren
     $result = getEmailsFromDatabase($email);
     //Vaststellen of er records zijn
-    $count = sizeof($result);
-    //Email in gebruik als er meer dan 0 records worden gevonden
-    if ($count > 0) {
-        return true;
-    } else {
+    $count = sizeOf($result);
+    if ($count == 0) { //gebruiker bestaat niet
         return false;
+    } else {
+        return true;
     }
 }

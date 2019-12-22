@@ -23,16 +23,17 @@ function getEmailsFromDatabase($email)
     return query('SELECT * FROM webshop_customers WHERE email = ?', array('s', $email));
 }
 
-function UserExistCheck($email)
+function RunEmailCheck($email)
 {
     //Query email uitvoeren
     $result = getEmailsFromDatabase($email);
     //Vaststellen of er records zijn
-    $count = sizeOf($result);
-    if ($count == 0) { //gebruiker bestaat niet
-        return false;
-    } else {
+    $count = sizeof($result);
+    //Email in gebruik als er meer dan 0 records worden gevonden
+    if ($count > 0) {
         return true;
+    } else {
+        return false;
     }
 }
 
@@ -48,5 +49,6 @@ function AddCustomerToDatabase($values = array())
     $_SESSION['logged_in'] = true; // Gebruiker is ook gelijk ingelogd
     $_SESSION['message'] = "
     U bent succesvol geregistreerd en ingelogd, u kunt verder met winkelen of bestellen door op een van de keuze te klikken";
-    header('Location: /success');
+    // header('Location: /success');
+
 }

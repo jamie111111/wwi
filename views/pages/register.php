@@ -1,21 +1,21 @@
 <?php
-
 //Haal ingevoerde waardes op 
 if (isset($_POST['register-user'])) {
     $userData = getFormData($connection);
-
     $email = $userData['email'];
     $check = RunEmailCheck($email);
+    // var_dump($_SERVER);
     if ($check) {
-        $_SESSION['message'] = 'Dit email is al in gebruik';
+        // session_unset();
+        // $_SESSION['message'] = 'Dit email is al in gebruik';
         header('Location: /error');
     } else {
         AddCustomerToDatabase($userData);
         // var_dump(mysqli_error($connection));
         // exit();
-        AccountVerification($userData['email'], $userData['voornaam']);
-        $_SESSION['ingelogd'] = true;
-        $_SESSION['message'] = "U bent succesvol geregistreerd en ingelogd, u kunt verder met winkelen of bestellen door op een van de keuze te klikken";
+        AccountVerification($email, $userData['voornaam']);
+        // $_SESSION['ingelogd'] = true;
+        // $_SESSION['message'] = "U bent succesvol geregistreerd en ingelogd, u kunt verder met winkelen of bestellen door op een van de keuze te klikken";
         header('Location: /success');
     }
 }
