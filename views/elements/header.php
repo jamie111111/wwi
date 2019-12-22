@@ -6,9 +6,9 @@ if ($productsInCart > 0) {
 }
 $loginButtonName = '';
 $loginData = GetLoginData($connection);
-$emailBtn = $_SESSION['login'];
+$emailBtn = isset($_SESSION['login']) ? $_SESSION['login'] : '';
 // unset($_SESSION['login']);
-if ($_SESSION['login']) {
+if ($emailBtn) {
     $loginButtonName = 'Ingelogd';
 } else {
     $loginButtonName = 'Inloggen';

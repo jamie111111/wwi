@@ -15,4 +15,6 @@ include_once('./functions/getQueryParamSafely.php');
 include_once('./functions/calculations.php');
 include_once('./functions/formatting.php');
 include_once('./functions/cart.php');
-include_once('./functions/formhandling.php');
+include_once('./functions/registrationhandling.php');
+include_once('./functions/loginhandling.php');
+include_once('./functions/registration-activationhandling.php');
