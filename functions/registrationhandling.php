@@ -29,9 +29,9 @@ function RunEmailCheck($email)
     $result = getEmailsFromDatabase($email);
     //Vaststellen of er records zijn
     $count = sizeof($result);
-    //Email in gebruik als er meer dan 0 records worden gevonden
+    //Het ingevoerde email is in gebruik als er meer dan 0 records worden gevonden
     if ($count > 0) {
-        return true;
+        return true; //email bestaat
     } else {
         return false;
     }
@@ -68,12 +68,19 @@ function AccountVerification($email, $voornaam)
     mail($naar, $onderwerp, $message_body);
 }
 
-function RegisterSuccessHandling($name)
+function RegisterSuccessHandling($user)
 {
     $_SESSION['active'] = 0; //Is 0 tot gebruiker zijn account activeert
     $_SESSION['logged_in'] = true; // Gebruiker is ook gelijk ingelogd
-    $_SESSION['user-name'] = $name;
     $_SESSION['message'] = "
     U bent succesvol geregistreerd en ingelogd, u kunt verder met winkelen of bestellen. Hier mooeten knoppen komen en styling";
-    header('Location: /success');
+    $_SESSION['user-data'] = $user;
+    header('Location: /homepage');
+}
+
+function TerminateSession()
+{
+    session_unset();
+    session_destroy();
+    ReDirectUserTo('/homepage');
 }

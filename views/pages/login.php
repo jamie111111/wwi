@@ -1,44 +1,15 @@
 <?php
 
-// if (isset($_POST['login-submit'])) {
-//     $loginData = GetLoginData($connection);
-
-//     if ($check = RunEmailCheck($email = $loginData['login-email'])) {
-//         var_dump($check);
-//         LoginErrorHandling();
-//     } else {
-//         LoginSuccesHandlingSession();
-//         ReDirectUserTo('/success');
-//     }
-// }
-
 if (isset($_POST['login-submit'])) {
     $loginData = GetLoginData($connection);
     if ($emailExists = RunEmailCheck($loginData['login-email'])) {
+        $userData = GetUserDataFromDataBase($loginData['login-email']);
+        $_SESSION['user-data'] = $userData;
         LoginSuccesHandling();
-        ReDirectUserTo('/success');
     } else {
         LoginErrorHandling();
     }
 }
-//  else {
-//     $loginData = '';
-//     // // $_SESSION['message'] = 'Om in te loggen moet u uw email en wachtwoord invoeren.';
-//     ReDirectUserTo('/error');
-// }
-// if ($_SESSION['logged_in']) {
-//     header('Location: /success');
-// }
-
-
-// if ($check = RunEmailCheck($email = $loginData['login-email'])) {
-//     LoginErrorHandling();
-// } else {
-//     LoginSuccesHandlingSession();
-//     ReDirectUserTo('/success');
-// }
-
-
 
 $body = '
         <div class="base-container base-container--login">

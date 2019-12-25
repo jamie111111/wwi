@@ -1,13 +1,13 @@
 <?php
-//Aangeroepen functies zijn in registerhandling beschreven
 if (isset($_POST['register-user'])) {
     $userData = getFormData($connection);
     if ($check  = RunEmailCheck($email = $userData['email'])) {
         EmailExistErrorHandling();
     } else {
         AddCustomerToDatabase($userData);
-        AccountVerification($email, $userData['voornaam']);
-        RegisterSuccessHandling($userData['voornaam']);
+        $user = GetUserDataFromDataBase($userData['email']);
+        // AccountVerification($email, $userData['voornaam']);
+        RegisterSuccessHandling($user);
     }
 }
 

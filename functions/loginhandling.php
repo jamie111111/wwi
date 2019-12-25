@@ -20,23 +20,32 @@ function LoginSuccesHandling()
     $_SESSION['message'] = "U bent ingelogd, klik verder winkelen
     ";
     $_SESSION['logged_in'] = true;
+    ReDirectUserTo('/homepage');
 }
 
-// function LoginSessionHandling()
-// {
-//     ReDirectUserTo('/success');
-// }
+function SetHeaderLogBtn()
+{
+    if (isset($_SESSION['logged_in'])) {
+        return 'Uitloggen';
+    } else if (!isset($_SESSION['logged_in'])) {
+        return 'Inloggen';
+    }
+}
 
 function ReDirectUserTo($page)
 {
     header('Location:' . $page);
 }
 
-// function HandleHeaderLoginBtn()
-// {
-//     if (!$_SESSION['logged_in']) {
-//         $loginButtonName = 'Inloggen';
-//     } else {
-//         $loginButtonName = isset($_SESSION['email-user']) ? $_SESSION['email-user'] : 'Inloggen';
-//     }
-// }
+function GetUserDataFromDataBase($email)
+{
+    return query('SELECT * FROM webshop_customers WHERE email = ?', array('s', $email));
+}
+
+function SetUserWelcomeInHeader()
+{
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+        $voornaam = $_SESSION['user-data'][0]['FirstName'];
+        return 'Welkom ' . $voornaam;
+    }
+}

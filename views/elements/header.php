@@ -5,15 +5,13 @@ if ($productsInCart > 0) {
     $cartBadge = "<span>" . $productsInCart . "</span>";
 }
 
-$username = '';
-$loginBtn = isset($_SESSION['logged_in']) ? $loginBtn = 'Uitloggen' : 'Inloggen';
+$username = SetUserWelcomeInHeader();
+$loginBtn = SetHeaderLogBtn();
 
 if (isset($_POST['header-login-submit']) && $loginBtn == 'Inloggen') {
     ReDirectUserTo('/login');
 } else if (isset($_POST['header-login-submit']) && $loginBtn == 'Uitloggen') {
-    session_unset();
-    session_destroy();
-    ReDirectUserTo('/homepage');
+    TerminateSession();
 }
 
 $headerTop = '
