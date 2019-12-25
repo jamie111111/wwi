@@ -90,7 +90,7 @@ footer {
     background-color: #005f93;
     height: 40px;
     max-height: 40px;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 footer .content-container {
@@ -140,7 +140,7 @@ footer .content-container a:last-of-type {
     background-color: #ffffff;
     position: relative;
     z-index: 1;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 .header-top .cart {
@@ -170,8 +170,10 @@ footer .content-container a:last-of-type {
 }
 
 .header-top .cart:hover {
-    -webkit-animation-name: wiggleCart; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 500ms; /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: wiggleCart;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 500ms;
+    /* Safari 4.0 - 8.0 */
     animation-name: wiggleCart;
     animation-duration: 500ms;
 }
@@ -221,7 +223,7 @@ footer .content-container a:last-of-type {
     max-width: 1024px;
     margin: 0 auto;
     padding: 0 40px;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     z-index: 1;
@@ -288,7 +290,7 @@ form.login-button-form button {
 .btn-primary span {
     display: inline-block;
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     font-style: normal;
 }
 
@@ -296,17 +298,14 @@ form.login-button-form button {
     margin-right: 10px;
 }
 
-.btn-primary:hover, .input-search-container .input-submit:hover {
+.btn-primary:hover,
+.input-search-container .input-submit:hover {
     background: #005f93;
 }
 
-.btn-secondary {
+.btn-secondary {}
 
-}
-
-.input-search-container {
-
-}
+.input-search-container {}
 
 .input-search-container .input-search {
     border: 1px solid rgba(0, 0, 0, 0.4);
@@ -335,15 +334,16 @@ form.login-button-form button {
 }
 
 .box-shadow {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 .box-shadow:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.go-back span, .go-to-top span {
+.go-back span,
+.go-to-top span {
     display: inline-block;
     transition: all .15s linear;
     text-decoration: underline;
@@ -364,16 +364,20 @@ form.login-button-form button {
     transform: translateX(-5px);
     text-decoration: none;
 }
-.go-back:hover span i, .go-to-top:hover span i {
+
+.go-back:hover span i,
+.go-to-top:hover span i {
     color: #6bb9f0;
 }
+
 .go-to-top:hover span {
     color: #6bb9f0;
     transform: translateY(-5px);
     text-decoration: none;
 }
 
-.icon-button, .icon-button {
+.icon-button,
+.icon-button {
     background: none;
     color: inherit;
     border: none;

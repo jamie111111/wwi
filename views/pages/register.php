@@ -1,22 +1,13 @@
 <?php
-//Haal ingevoerde waardes op 
+//Aangeroepen functies zijn in registerhandling beschreven
 if (isset($_POST['register-user'])) {
     $userData = getFormData($connection);
-    $email = $userData['email'];
-    $check = RunEmailCheck($email);
-    // var_dump($_SERVER);
-    if ($check) {
-        // session_unset();
-        // $_SESSION['message'] = 'Dit email is al in gebruik';
-        header('Location: /error');
+    if ($check  = RunEmailCheck($email = $userData['email'])) {
+        EmailExistErrorHandling();
     } else {
         AddCustomerToDatabase($userData);
-        // var_dump(mysqli_error($connection));
-        // exit();
         AccountVerification($email, $userData['voornaam']);
-        // $_SESSION['ingelogd'] = true;
-        // $_SESSION['message'] = "U bent succesvol geregistreerd en ingelogd, u kunt verder met winkelen of bestellen door op een van de keuze te klikken";
-        header('Location: /success');
+        RegisterSuccessHandling($userData['voornaam']);
     }
 }
 
@@ -24,10 +15,7 @@ $body = '
 <h1 class="base-heading base-heading--account">Nieuw bij World Wide Importers</h1>
 <div class="base-wrapper base-wrapper--account">
 
-
     <form class="form-container" action="register" method="POST">
-
-
 
         <p class="box-1">Aanhef *</p>
         <p class="box-2">

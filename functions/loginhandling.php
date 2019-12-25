@@ -9,15 +9,34 @@ function GetLoginData($connection)
     }
 }
 
-function UserExistCheck($email)
+function LoginErrorHandling()
 {
-    //Query email uitvoeren
-    $result = getEmailsFromDatabase($email);
-    //Vaststellen of er records zijn
-    $count = sizeOf($result);
-    if ($count == 0) { //gebruiker bestaat niet
-        return false;
-    } else {
-        return true;
-    }
+    $_SESSION['message'] = 'Onjuist/onbekend email of wachtwoord of niks ingevuld test';
+    ReDirectUserTo('/error');
 }
+
+function LoginSuccesHandling()
+{
+    $_SESSION['message'] = "U bent ingelogd, klik verder winkelen
+    ";
+    $_SESSION['logged_in'] = true;
+}
+
+// function LoginSessionHandling()
+// {
+//     ReDirectUserTo('/success');
+// }
+
+function ReDirectUserTo($page)
+{
+    header('Location:' . $page);
+}
+
+// function HandleHeaderLoginBtn()
+// {
+//     if (!$_SESSION['logged_in']) {
+//         $loginButtonName = 'Inloggen';
+//     } else {
+//         $loginButtonName = isset($_SESSION['email-user']) ? $_SESSION['email-user'] : 'Inloggen';
+//     }
+// }

@@ -3,7 +3,9 @@
 $message = '';
 if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
     $message = '<p>' . $_SESSION['message'] . '</p>';
-}
+};
+// // var_dump($_SESSION['logged_in']);
+// var_dump($_SESSION['logged_in']);
 
 $body = '
 <div class="form content-container">

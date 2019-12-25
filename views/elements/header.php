@@ -4,15 +4,18 @@ $cartBadge = '';
 if ($productsInCart > 0) {
     $cartBadge = "<span>" . $productsInCart . "</span>";
 }
-$loginButtonName = '';
-$loginData = GetLoginData($connection);
-$emailBtn = isset($_SESSION['login']) ? $_SESSION['login'] : '';
-// unset($_SESSION['login']);
-if ($emailBtn) {
-    $loginButtonName = 'Ingelogd';
-} else {
-    $loginButtonName = 'Inloggen';
+
+$username = '';
+$loginBtn = isset($_SESSION['logged_in']) ? $loginBtn = 'Uitloggen' : 'Inloggen';
+
+if (isset($_POST['header-login-submit']) && $loginBtn == 'Inloggen') {
+    ReDirectUserTo('/login');
+} else if (isset($_POST['header-login-submit']) && $loginBtn == 'Uitloggen') {
+    session_unset();
+    session_destroy();
+    ReDirectUserTo('/homepage');
 }
+
 $headerTop = '
     <div class="header-top">
         <div class="content-container">
@@ -31,8 +34,10 @@ $headerTop = '
                     </form>
                 </li>
                 <li>
-                    <form class="login-button-form" action="/login" method="POST">
-                        <button class="btn-primary" type="submit"><span class="fa fa-user"></span><span> ' . $loginButtonName . '</span></button>
+                    <form action="/login"  class="login-button-form"  method="POST">
+                        <button name="header-login-submit"  class="btn-primary" type="submit"><span class="fa fa-user"></span><span> ' . $loginBtn . '</span></button>
+                        
+                       
                     </form>
                 </li>
                 <li>
@@ -57,6 +62,11 @@ $headerBottom = '
                         <a href="/about">Over ons</a>
                     </li>
                 </ul>
+            </div>
+            <div class="welkom"> 
+                <li>
+                <a href="#"> ' . $username . '</a>
+                </li>
             </div>
             <div class="header-bottom-right">
                 <ul>

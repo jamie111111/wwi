@@ -1,22 +1,43 @@
 <?php
 
+// if (isset($_POST['login-submit'])) {
+//     $loginData = GetLoginData($connection);
+
+//     if ($check = RunEmailCheck($email = $loginData['login-email'])) {
+//         var_dump($check);
+//         LoginErrorHandling();
+//     } else {
+//         LoginSuccesHandlingSession();
+//         ReDirectUserTo('/success');
+//     }
+// }
+
 if (isset($_POST['login-submit'])) {
     $loginData = GetLoginData($connection);
-
-    $email = $loginData['login-email'];
-    //check of gebruiker staat geregistreerd
-    $check = UserExistCheck($email);
-
-    if (!$check) {
-        $_SESSION['message'] = 'Onjuist/onbekend email of wachtwoord';
-        header('location: /error');
-        return;
+    if ($emailExists = RunEmailCheck($loginData['login-email'])) {
+        LoginSuccesHandling();
+        ReDirectUserTo('/success');
     } else {
-        $_SESSION['message'] = "U bent ingelogd";
-        $_SESSION['login'] = $email;
-        header('location: /success');
+        LoginErrorHandling();
     }
 }
+//  else {
+//     $loginData = '';
+//     // // $_SESSION['message'] = 'Om in te loggen moet u uw email en wachtwoord invoeren.';
+//     ReDirectUserTo('/error');
+// }
+// if ($_SESSION['logged_in']) {
+//     header('Location: /success');
+// }
+
+
+// if ($check = RunEmailCheck($email = $loginData['login-email'])) {
+//     LoginErrorHandling();
+// } else {
+//     LoginSuccesHandlingSession();
+//     ReDirectUserTo('/success');
+// }
+
 
 
 $body = '

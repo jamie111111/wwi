@@ -1,22 +1,10 @@
 <?php
 
-
-function AccountVerification($email, $voornaam)
+function QueryNotVerifiedUser($email)
 {
-    $naar = $email;
-    $onderwerp = 'Account bevestigen (Wide World Importers)';
-    $message_body = '
-    Hallo ' . $voornaam . ',
-    
-    Hartelijk dank voor je inschrijving en welkom bij Wide World Importers!!
-    
-    Klik op de link om je account te activeren:
-
-    http://localhost/verify?email=' . $email . ';
-    ';
-
-    mail($naar, $onderwerp, $message_body);
+    return query('SELECT * FROM webshop_customers WHERE email = ? AND active="0" ', array('s', $email));
 }
+
 function GetEmailFromUrl($connection)
 {
     if (isset($_GET['email']) && !empty($_GET['email'])) {
@@ -28,11 +16,6 @@ function GetEmailFromUrl($connection)
     }
 }
 
-function QueryNotVerifiedUser($email)
-{
-    return query('SELECT * FROM webshop_customers WHERE email = ? AND active="0" ', array('s', $email));
-}
-
 function ActivationHandling($result)
 {
     $count = sizeof($result);
@@ -40,7 +23,7 @@ function ActivationHandling($result)
         $_SESSION['message'] = "Account is al geactiveerd of de link is ongeldig, partyyy!";
         header("Location:/error");
     } else {
-        $_SESSION['message'] = "Je account is geactiveerd!";
+        $_SESSION['message'] = "Je account is geactiveerd test party!!!!!";
         header("location: success");
     }
 }

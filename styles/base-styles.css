@@ -134,3 +134,9 @@ body {
     background: #6bb9f0;
     border-color: #6bb9f0
 }
+
+.welkom {
+    list-style: none;
+    color: #ffffff;
+    text-decoration: none;
+}
